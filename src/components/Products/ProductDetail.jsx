@@ -1,10 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Rating from "react-rating-stars-component";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider";
 
 
 const ProductDetail = () => {
+
+    const { user } = useContext(AuthContext);
 
     const loadedCars = useLoaderData();
     const [carts, setCarts] = useState();

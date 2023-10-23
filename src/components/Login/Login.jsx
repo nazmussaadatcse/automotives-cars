@@ -1,8 +1,8 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
-import { FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { AuthContext } from "../AuthProvider";
+import SocialLogin from "../SocialLogin/SocialLogin";
 
 
 
@@ -86,6 +86,7 @@ const Login = () => {
                     </div>
                 </form>
                 <p className="text-center mb-4">Do not have an account? <Link className="font-semibold text-green-700 " to={"/register"}>Register</Link></p>
+                <SocialLogin></SocialLogin>
             </div>
         </div>
     </div>

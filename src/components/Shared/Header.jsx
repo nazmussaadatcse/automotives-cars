@@ -27,7 +27,7 @@ const Header = () => {
 
 
         <div className="navbar mb-8 py-4 shadow-md bg-orange-500">
-             <img className="lg:flex justify-center items-center w-40 hidden" src="https://i.ibb.co/jLMfjbx/Ivory-Black-Luxury-Minimalist-Personal-Name-Logo-removebg-preview.png" alt="" />
+            <img className="lg:flex justify-center items-center w-28 md:w-40 " src="https://i.ibb.co/jLMfjbx/Ivory-Black-Luxury-Minimalist-Personal-Name-Logo-removebg-preview.png" alt="" />
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -38,19 +38,21 @@ const Header = () => {
                     </ul>
                 </div>
             </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+            <div className="navbar-center hidden w-96 lg:flex">
+                <ul className="menu menu-horizontal ">
                     {navLinks}
                 </ul>
             </div>
             <div className="navbar-end gap-1">
-                <div className="flex justify-center items-center border rounded-full px-2">
-                <p className="font-semibold">{user?.displayName}</p>
-                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 flex rounded-full">
-                        <img src={user?.photoURL? user.photoURL : <BiUserCircle></BiUserCircle>} />
-                    </div>
-                </label>
+                <div className="flex justify-center text-xs md:text-sm w-auto items-center border rounded-full px-2">
+                    <p className="font-semibold">
+                        {user?.displayName ? user.displayName.slice(0, 10) : null}
+                    </p>
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                        <div className="w-10 flex rounded-full">
+                            <img src={user?.photoURL ? user.photoURL : <BiUserCircle></BiUserCircle>} />
+                        </div>
+                    </label>
                 </div>
                 {
                     user ?
@@ -60,12 +62,12 @@ const Header = () => {
                             <Link to={"/login"}>
                                 <button className="btn hover:bg-purple-950 rounded-md btn-sm text-red-700 font-bold">Login</button>
                             </Link>
-                            
+
                         </div>
 
                 }
             </div>
-            <img className="flex justify-center items-center w-40 lg:hidden" src="https://i.ibb.co/jLMfjbx/Ivory-Black-Luxury-Minimalist-Personal-Name-Logo-removebg-preview.png" alt="" />
+            <img src="" alt="" />
         </div>
     );
 };
