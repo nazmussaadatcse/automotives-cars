@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { updateProfile } from "firebase/auth";
 import { FaGoogle } from "react-icons/fa";
@@ -19,10 +19,10 @@ const Register = () => {
     }, 5000);
 
 
-    const handleRegister = e => {
-        e.preventDefault();
+    const handleRegister = event => {
+        event.preventDefault();
 
-        const form = new FormData(e.currentTarget);
+        const form = new FormData(event.currentTarget);
         const name = form.get('name');
         const email = form.get('email');
         const password = form.get('password');
@@ -48,11 +48,13 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result);
-                // update profile 
+
+                // update profile and set name, photo
                 updateProfile(result.user, {
                     displayName: name,
                     photoURL: photo
                 })
+
                     .then(() => {
                         console.log('profile updated')
                         Swal.fire({
@@ -63,7 +65,7 @@ const Register = () => {
                             timer: 1500
                         })
                     })
-                    // returning to previous route 
+                // returning to previous route 
                 navigate(location?.state ? location.state : '/')
             })
             .catch(err => {
@@ -72,7 +74,7 @@ const Register = () => {
     }
     return (
         <div className="hero min-h-screen bg-base-200">
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="hero-content p-12 flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Register now!</h1>
                     <p className="py-6">
@@ -117,6 +119,7 @@ const Register = () => {
                             <button className="btn btn-primary">Register</button>
                         </div>
                     </form>
+                    <p className="text-center mb-4">Already have an account? <Link className="font-semibold text-green-700" to={"/login"}>Login</Link></p>
                 </div>
             </div>
         </div>

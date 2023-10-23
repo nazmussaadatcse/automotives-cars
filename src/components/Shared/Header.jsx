@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { BiUserCircle } from 'react-icons/bi';
 import { AuthContext } from "../AuthProvider";
+import { FaCartPlus } from "react-icons/fa";
 
 
 const Header = () => {
@@ -20,9 +21,7 @@ const Header = () => {
     const navLinks = <>
         <li><NavLink to={"/"}>Home</NavLink></li>
         <li><NavLink to={"/addproduct"}>Add Product</NavLink></li>
-        <li><NavLink to={"/login"}>Login</NavLink></li>
-        <li><NavLink to={"/register"}>Register</NavLink></li>
-        <li><NavLink to={"/cart"}>Cart</NavLink></li>
+        <li><NavLink to={"/cart"}>Cart<FaCartPlus className="text-xl"></FaCartPlus> </NavLink></li>
     </>
     return (
 
