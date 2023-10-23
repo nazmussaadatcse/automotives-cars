@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Rating from "react-rating-stars-component";
+import Swal from "sweetalert2";
 
 
 const ProductDetail = () => {
@@ -36,10 +37,17 @@ const ProductDetail = () => {
             (cart) => cart.email === email && cart.cart._id === id
         );
         if (existingCartItem) {
-            console.log('true');
+            console.log('duplicate found');
+            Swal.fire({
+                position: 'top-center',
+                icon: 'warning',
+                title: 'Already in Cart',
+                showConfirmButton: false,
+                timer: 1500
+            })
         }
         else {
-            console.log('false');
+            console.log('new product');
             console.log(id);
             const cartItem = cars.filter((car) => car._id === id);
 
@@ -48,18 +56,28 @@ const ProductDetail = () => {
                 cart: cartItem[0],
             };
 
-            const addedCarts = cartDB;
-            console.log(addedCarts);
+            const updatedCarts = [...carts, cartDB];
+
+            // Update the state and avoid duplicate add to cart
+            setCarts(updatedCarts);
+
 
             fetch('http://localhost:5000/cart', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify(addedCarts)
+                body: JSON.stringify(cartDB)
             })
                 .then(res => res.json())
                 .then(data => {
+                    Swal.fire({
+                        position: 'top-center',
+                        icon: 'success',
+                        title: 'Added successfully',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                     console.log(data);
                 })
                 .catch(error => {
@@ -83,9 +101,11 @@ const ProductDetail = () => {
                         </div>
                         <div className="md:w-1/2 p-8 flex flex-col justify-center items-left">
                             <h1 className="text-2xl font-bold">Product Details</h1>
-                            <p className="py-6">{ }</p>
-                            <p>Brand: {car.brand}</p>
-                            <p>Type: {car.type}</p>
+                            <div className="uppercase font-semibold">
+                                <p className="">Model: {car.name}</p>
+                                <p>Brand: {car.brand}</p>
+                                <p>Type: {car.type}</p>
+                            </div>
                             <div>
                                 <Rating
                                     count={5}
@@ -101,9 +121,10 @@ const ProductDetail = () => {
 
                             <p>Ratings: {car.ratings}</p>
                             <p className="text-purple-900 font-semibold">Price: $ {car.price}</p>
-                            <button onClick={() => addToCart(car._id, 'user@example.com')} className=" btn btn-xs my-2 btn-outline w-1/3 rounded-md">
+                            <button onClick={() => addToCart(car._id, 'user@example.com')} className=" btn btn-xs my-2 btn-outline w-24 rounded-md">
                                 Add to Cart
                             </button>
+                            <p className="font-semibold">Descriptions:</p>
                             <p>{car.short_description}</p>
 
                         </div>

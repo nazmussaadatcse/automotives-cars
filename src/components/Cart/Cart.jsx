@@ -18,25 +18,40 @@ const Cart = () => {
     const handelDelete = (id, email) => {
         console.log(id);
 
-        fetch(`http://localhost:5000/cart/${id}?email=${email}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount > 0) {
-                    // console.log('deleted successfully');
-                    const remainingCart = carts.filter(cart => cart._id !== id);
-                    setCart(remainingCart);
-                    Swal.fire({
-                        position: 'top-center',
-                        icon: 'success',
-                        title: 'Deleted successfully',
-                        showConfirmButton: false,
-                        timer: 1500
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/cart/${id}?email=${email}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            // console.log('deleted successfully');
+                            const remainingCart = carts.filter(cart => cart._id !== id);
+                            setCart(remainingCart);
+                            Swal.fire({
+                                position: 'top-center',
+                                icon: 'success',
+                                title: 'Deleted successfully',
+                                showConfirmButton: false,
+                                timer: 1500
+                            })
+                            // console.log(carts);
+                        }
                     })
-                    // console.log(carts);
-                }
-            })
+            }
+        })
+
+
     }
 
 
