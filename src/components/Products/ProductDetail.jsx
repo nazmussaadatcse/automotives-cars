@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import Rating from "react-rating-stars-component";
 
@@ -6,6 +6,7 @@ import Rating from "react-rating-stars-component";
 const ProductDetail = () => {
 
     const loadedCars = useLoaderData();
+    const [carts, setCarts] = useState();
 
     const id = useParams();
     const [cars, setCars] = useState(loadedCars);
@@ -13,32 +14,61 @@ const ProductDetail = () => {
     const filteredCars = cars.filter((car) => car._id === id.id);
     // console.log('id:', filteredCars);
 
-    const addToCart = (id, email) => {
-        console.log(id);
-        const cartItem = cars.filter((car) => car._id === id);
 
-        const cartDB = {
-            email: email, // Add email here
-            cart: cartItem[0],
-        };
-        
-        const addedCarts = cartDB;
-        console.log(addedCarts);
-
-        fetch('http://localhost:5000/cart', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(addedCarts)
-        })
-            .then(res => res.json())
-            .then(data => {
+    useEffect(() => {
+        // Load cart data 
+        fetch('http://localhost:5000/cart')
+            .then((res) => res.json())
+            .then((data) => {
+                setCarts(data);
                 console.log(data);
             })
-            .catch(error => {
+            .catch((error) => {
                 console.log(error);
+            });
+    }, []);
+
+
+
+    const addToCart = (id, email) => {
+
+        const existingCartItem = carts.find(
+            (cart) => cart.email === email && cart.cart._id === id
+        );
+        if (existingCartItem) {
+            console.log('true');
+        }
+        else {
+            console.log('false');
+            console.log(id);
+            const cartItem = cars.filter((car) => car._id === id);
+
+            const cartDB = {
+                email: email, // Add email here
+                cart: cartItem[0],
+            };
+
+            const addedCarts = cartDB;
+            console.log(addedCarts);
+
+            fetch('http://localhost:5000/cart', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(addedCarts)
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        }
+
+
+
 
     }
 
@@ -75,7 +105,7 @@ const ProductDetail = () => {
                                 Add to Cart
                             </button>
                             <p>{car.short_description}</p>
-                            
+
                         </div>
 
                     </div>
