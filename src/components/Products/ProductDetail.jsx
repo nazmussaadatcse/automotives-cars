@@ -54,8 +54,8 @@ const ProductDetail = () => {
                         <div className="md:w-1/2 p-8 flex flex-col justify-center items-left">
                             <h1 className="text-2xl font-bold">Product Details</h1>
                             <p className="py-6">{ }</p>
-                            <p>brand: {car.brand}</p>
-                            <p>type: {car.type}</p>
+                            <p>Brand: {car.brand}</p>
+                            <p>Type: {car.type}</p>
                             <div>
                                 <Rating
                                     count={5}
@@ -69,12 +69,13 @@ const ProductDetail = () => {
 
                             </div>
 
-                            <p>ratings: {car.ratings}</p>
+                            <p>Ratings: {car.ratings}</p>
                             <p className="text-purple-900 font-semibold">Price: $ {car.price}</p>
-                            <button onClick={() => addToCart(car._id, 'user@example.com')} className="btn w-1/3 rounded-md">
+                            <button onClick={() => addToCart(car._id, 'user@example.com')} className=" btn btn-xs my-2 btn-outline w-1/3 rounded-md">
                                 Add to Cart
                             </button>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate sapiente quas a aut incidunt tenetur necessitatibus nulla, nobis cumque impedit sequi quidem odio corporis et inventore reiciendis neque totam dolores, voluptates ab, ea voluptatibus asperiores minus. Accusantium officiis est vel.</p>
+                            <p>{car.short_description}</p>
+                            
                         </div>
 
                     </div>
