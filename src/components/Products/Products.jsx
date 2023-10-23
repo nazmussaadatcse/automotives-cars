@@ -39,7 +39,7 @@ const Products = () => {
                                 <Link to={`/details/${car._id}`} className="btn btn-outline text-white btn-sm rounded-md bg-purple-900">
                                     Details
                                 </Link>
-                                <Link to={`/update/${car._id}`} className="btn btn-outline text-white btn-sm rounded-md bg-purple-900">
+                                <Link to={`/car/${car._id}`} className="btn btn-outline text-white btn-sm rounded-md bg-purple-900">
                                     Update
                                 </Link>
                             </div>

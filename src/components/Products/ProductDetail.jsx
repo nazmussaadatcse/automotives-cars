@@ -16,10 +16,12 @@ const ProductDetail = () => {
     const addToCart = (id, email) => {
         console.log(id);
         const cartItem = cars.filter((car) => car._id === id);
+
         const cartDB = {
-            email: email, // Add your email here
+            email: email, // Add email here
             cart: cartItem[0],
         };
+        
         const addedCarts = cartDB;
         console.log(addedCarts);
 
