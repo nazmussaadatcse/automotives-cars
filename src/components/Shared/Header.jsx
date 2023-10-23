@@ -1,22 +1,33 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { BiUserCircle } from 'react-icons/bi';
+import { AuthContext } from "../AuthProvider";
 
 
 const Header = () => {
-    const [user, setuser] = useState(null);
+    // const [user, setuser] = useState(null);
+    const { user, logOut } = useContext(AuthContext);
+    // console.log(user?.displayName);
+
+    const handleSignOut = () => {
+        logOut()
+            .then()
+            .catch()
+    }
+
 
 
     const navLinks = <>
         <li><NavLink to={"/"}>Home</NavLink></li>
         <li><NavLink to={"/addproduct"}>Add Product</NavLink></li>
         <li><NavLink to={"/login"}>Login</NavLink></li>
+        <li><NavLink to={"/register"}>Register</NavLink></li>
         <li><NavLink to={"/cart"}>Cart</NavLink></li>
     </>
     return (
 
 
-        <div className="navbar my-4 py-4 shadow-md">
+        <div className="navbar mb-8 py-4 shadow-md bg-orange-500">
              <img className="lg:flex justify-center items-center w-40 hidden" src="https://i.ibb.co/jLMfjbx/Ivory-Black-Luxury-Minimalist-Personal-Name-Logo-removebg-preview.png" alt="" />
             <div className="navbar-start">
                 <div className="dropdown">
@@ -44,7 +55,7 @@ const Header = () => {
                 </div>
                 {
                     user ?
-                        <button className="btn rounded-md btn-sm">SignOut</button> :
+                        <button onClick={handleSignOut} className="btn rounded-md btn-sm">SignOut</button> :
                         <div className='flex justify-center items-center gap-2'>
 
                             <Link to={"/login"}>

@@ -6,6 +6,8 @@ import Products from "./Products/Products";
 import ProductDetail from "./Products/ProductDetail";
 import Cart from "./Cart/Cart";
 import UpdateProduct from "./UpdateProduct/UpdateProduct";
+import Login from "./Login/Login";
+import Register from "./Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -16,7 +18,14 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                // loader: ()=> fetch('brand.json')
+            },
+            {
+                path: '/login',
+                element: <Login></Login>,
+            },
+            {
+                path: '/register',
+                element: <Register></Register>,
             },
             {
                 path: '/addproduct',
