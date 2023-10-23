@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { BiStar } from "react-icons/bi";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import { AuthContext } from "../AuthProvider";
 
 
 const Cart = () => {
@@ -9,8 +10,10 @@ const Cart = () => {
     const loadedCart = useLoaderData();
     const [carts, setCart] = useState(loadedCart);
     // console.log(carts);
+    const { user } = useContext(AuthContext);
+    console.log(user.email);
 
-    const filterEmail = "user@example.com"; // The email to filter by
+    const filterEmail = user.email; // The email to filter by
     const filteredCarts = carts.filter((cart) => cart.email === filterEmail);
     console.log(filteredCarts);
 

@@ -8,6 +8,7 @@ import { AuthContext } from "../AuthProvider";
 const ProductDetail = () => {
 
     const { user } = useContext(AuthContext);
+    console.log(user.email);
 
     const loadedCars = useLoaderData();
     const [carts, setCarts] = useState();
@@ -124,7 +125,7 @@ const ProductDetail = () => {
 
                             <p>Ratings: {car.ratings}</p>
                             <p className="text-purple-900 font-semibold">Price: $ {car.price}</p>
-                            <button onClick={() => addToCart(car._id, 'user@example.com')} className=" btn btn-xs my-2 btn-outline w-24 rounded-md">
+                            <button onClick={() => addToCart(car._id, user.email)} className=" btn btn-xs my-2 btn-outline w-24 rounded-md">
                                 Add to Cart
                             </button>
                             <p className="font-semibold">Descriptions:</p>
