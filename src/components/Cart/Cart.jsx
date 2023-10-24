@@ -11,11 +11,17 @@ const Cart = () => {
     const [carts, setCart] = useState(loadedCart);
     // console.log(carts);
     const { user } = useContext(AuthContext);
-    console.log(user.email);
+    console.log(user);
 
-    const filterEmail = user.email; // The email to filter by
+    const filterEmail = user?.email; // The email to filter by
     const filteredCarts = carts.filter((cart) => cart.email === filterEmail);
     console.log(filteredCarts);
+
+    const totalPrice = filteredCarts.reduce((total, cart) => total + parseInt(cart.cart.price, 10), 0);
+    const formattedTotalPrice = totalPrice.toFixed(2);
+    console.log(formattedTotalPrice);
+
+
 
 
     const handelDelete = (id, email) => {
@@ -59,10 +65,18 @@ const Cart = () => {
 
 
     return (
-        <div className="border border-gray-200 m-4">
-            <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-2xl text-purple-900'>
-                <span className="border shadow-md p-2">My Cart</span>
-            </h2>
+        <div className="border border-gray-200">
+            <h2 className="uppercase flex justify-center items-center p-2 m-2 mt-4 font-bold text-2xl gap-2 text-purple-900">MyCart</h2>
+            <div className='uppercase flex-block md:flex lg:flex justify-center items-center p-4 m-2 mb-4 font-semibold text-2xl gap-2 bg-orange-500 text-gray-700 '>
+                <img className="md:mb-0 mb-4" src={user?.photoURL} alt="" />
+                <span className="border text-xl font-bold text-purple-900 shadow-md md:py-8 p-1">{user?.displayName}</span>
+                <div className="text-sm md:mt-0 mt-4">
+                    <p><span className="font-bold text-purple-900">Added Item :</span> {filteredCarts.length}</p>
+                    <p><span className="font-bold text-purple-900">Total :</span> ${formattedTotalPrice}</p>
+                    <p><span className="font-bold text-purple-900">Email :</span> <span className="lowercase">{user?.email}</span></p>
+                    <p><span className="font-bold text-purple-900">Registered:</span> {user?.metadata.creationTime}</p>
+                </div>
+            </div>
             {
                 filteredCarts.map((cart, index) => <div key={cart._id} className="block md:flex p-2 bg-slate-200 m-2 gap-2">
                     <p className="flex justify-center items-center text-center bg-slate-50 p-1 text-blue-800 text-xs font-bold">Item {index + 1}</p>

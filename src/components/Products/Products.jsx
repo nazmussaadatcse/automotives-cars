@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import Slider from "./Slider";
+import HomeSlider from "../Home/HomeSlider";
 
 const Products = () => {
     const loadedCars = useLoaderData();
@@ -15,18 +16,10 @@ const Products = () => {
     return (
         <div>
             <div>
-                {/* {
-                    filteredCars.map(car => (
-                        <Slider
-                            car={car}
-                            key={car._id}
-                        ></Slider>
-                    ))
-                } */}
                 <Slider
-                            car={filteredCars}
-                            key={filteredCars._id}
-                        ></Slider>
+                    car={filteredCars}
+                    key={filteredCars._id}
+                ></Slider>
             </div>
 
 
