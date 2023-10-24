@@ -23,15 +23,15 @@ const HomeSlider = () => {
     }, []);
 
     return (
-        <div className='my-8'>
+        <div className='my-8 border shadow-md'>
             <div className="swiper-container w-full h-full ">
                 <Swiper
                     modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                     spaceBetween={50}
-                    slidesPerView={1}
+                    slidesPerView={2}
                     navigation
                     pagination={{ clickable: true }}
-                    scrollbar={{ draggable: true }}
+                    // scrollbar={{ draggable: true }}
                     autoplay={{ delay: 4000 }}
                     onSwiper={(swiper) => console.log(swiper)}
                     onSlideChange={() => console.log('slide change')}

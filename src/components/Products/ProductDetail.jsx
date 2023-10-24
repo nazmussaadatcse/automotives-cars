@@ -124,6 +124,11 @@ const ProductDetail = () => {
                             </div>
 
                             <p>Ratings: {car.ratings}</p>
+                            <div className="flex gap-1 my-1">
+                                <p className="btn btn-xs rounded-md bg-black text-white hover:text-black">black</p>
+                                <p className="btn btn-xs rounded-md bg-red-600 text-white hover:text-black">red</p>
+                                <p className="btn btn-xs rounded-md bg-blue-600 text-white hover:text-black">blue</p>
+                            </div>
                             <p className="text-purple-700 font-semibold">Price: $ {car.price}</p>
                             <button onClick={() => addToCart(car._id, user.email)} className=" btn btn-xs bg-white my-2 btn-outline w-24 rounded-md">
                                 Add to Cart

@@ -57,8 +57,8 @@ const Home = () => {
             <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-xl text-purple-700'>
                 Latest Cars of Automotives Brand
             </h2>
-            <div className="flex justify-center items-center text-center gap- p-2">
-                <Marquee pauseOnHover={true} speed={100}>
+            <div className="flex justify-center items-center text-center gap-1 p-2">
+                <Marquee pauseOnHover={true} speed={100} className="">
                     {car.map((item, index) => (
                         <Link key={index} className="">
                             <img className='w-60 h-40 px-1' src={item.photo} alt={item.title} />
@@ -82,38 +82,38 @@ const Home = () => {
                     <div className="collapse collapse-arrow join-item border border-base-300">
                         <input type="radio" name="my-accordion-4" checked="checked" />
                         <div className="collapse-title text-xl font-medium">
-                            What are the subscription benefits?
+                        What should I consider when buying a new car?
                         </div>
                         <div className="collapse-content">
-                            <p>Subscribing to our newsletter gives you access to exclusive offers, product updates, and the latest news.</p>
+                            <p>When buying a new car, consider your budget, the type of vehicle (sedan, SUV, truck, etc.), your needs (commuting, family, off-roading), fuel efficiency, safety features, and resale value.</p>
                         </div>
                     </div>
                     <div className="collapse collapse-arrow join-item border border-base-300">
                         <input type="radio" name="my-accordion-4" />
                         <div className="collapse-title text-xl font-medium">
-                            How often will I receive updates?
+                        Are electric cars (EVs) practical for everyday use?
                         </div>
                         <div className="collapse-content">
-                            <p>You will receive updates approximately once a week, depending on the availability of new content and promotions.</p>
+                            <p>Electric cars are increasingly practical for daily use, with advancements in battery technology providing longer ranges. However, charging infrastructure and individual driving habits can influence their practicality.</p>
                         </div>
                     </div>
                     <div className="collapse collapse-arrow join-item border border-base-300">
                         <input type="radio" name="my-accordion-4" />
                         <div className="collapse-title text-xl font-medium">
-                            Is my email address secure?
+                        What is the hybrid and plug-in hybrid cars?
                         </div>
                         <div className="collapse-content">
-                            <p>Yes, we take your privacy seriously. Your email address is securely stored and will not be shared with third parties.
+                            <p>Hybrid cars use a combination of an internal combustion engine and an electric motor, with the battery charged through regenerative braking. Plug-in hybrids can be charged via an electrical outlet and often have a longer electric-only range.
                             </p>
                         </div>
                     </div>
                     <div className="collapse collapse-arrow join-item border border-base-300">
                         <input type="radio" name="my-accordion-4" />
                         <div className="collapse-title text-xl font-medium">
-                            How can I unsubscribe?
+                        How do I choose the right car insurance policy?
                         </div>
                         <div className="collapse-content">
-                            <p>You can unsubscribe at any time by clicking the `Unsubscribe` link in our newsletter or by contacting our support team.</p>
+                            <p>When selecting car insurance, consider your budget, coverage needs, and deductible preferences. It's advisable to compare quotes from multiple insurance providers to find the best policy for your specific situation.</p>
                         </div>
                     </div>
                 </div>
