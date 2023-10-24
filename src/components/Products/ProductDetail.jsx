@@ -90,13 +90,10 @@ const ProductDetail = () => {
         }
 
 
-
-
     }
 
     return (
         <div>
-            <h2>Product Details</h2>
             {filteredCars.map((car) => (
                 <div key={car._id} className="my-12 md:p-12 flex justify-center min-h-screen ">
                     <div className="border p-2 border-red-300 w-full md:flex justify-center md:p-12">

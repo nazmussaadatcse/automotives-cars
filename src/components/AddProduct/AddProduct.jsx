@@ -39,6 +39,8 @@ const AddProduct = () => {
                         showConfirmButton: false,
                         timer: 1500
                     })
+                    // Reset the form
+                    form.reset();
                 }
             })
     }
@@ -53,7 +55,7 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">Product Name</span>
                         </label>
-                        <input type="text" name="name" placeholder="Product name" className="input input-bordered w-full rounded-md " />
+                        <input type="text" name="name" required placeholder="Product name" className="input input-bordered w-full rounded-md " />
                     </div>
                     <div className="form-control w-full md:w-1/2">
                         <label className="label">
@@ -73,7 +75,7 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">PhotoURL</span>
                         </label>
-                        <input type="text" name="photo" placeholder="PhotoURL" className="input input-bordered w-full rounded-md " />
+                        <input type="text" name="photo" required placeholder="PhotoURL" className="input input-bordered w-full rounded-md " />
                     </div>
                     <div className="form-control w-full md:w-1/2">
                         <label className="label">
@@ -97,7 +99,7 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">Price $</span>
                         </label>
-                        <input type="text" name="price" placeholder="Price $" className="input input-bordered w-full rounded-md " />
+                        <input type="text" name="price" required placeholder="Price $" className="input input-bordered w-full rounded-md " />
                     </div>
                     <div className="form-control w-full md:w-1/2">
                         <label className="label">
@@ -114,12 +116,6 @@ const AddProduct = () => {
                             <option value="0">0</option>
                         </select>
                     </div>
-                    {/* <div className="form-control w-full md:w-1/2">
-                        <label className="label">
-                            <span className="label-text">Ratings</span>
-                        </label>
-                        <input type="number" defaultValue={5} name="ratings" placeholder="ratings (5 max)" className="input input-bordered w-full rounded-md " />
-                    </div> */}
 
 
                 </div>
@@ -129,7 +125,7 @@ const AddProduct = () => {
                         <label className="label">
                             <span className="label-text">Short Description</span>
                         </label>
-                        <input type="text" name="short_description" placeholder="Short Description" className="input input-bordered w-full rounded-md " />
+                        <input type="text" name="short_description" required placeholder="Short Description" className="input input-bordered w-full rounded-md " />
                     </div>
 
                 </div>
