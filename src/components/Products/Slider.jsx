@@ -20,12 +20,12 @@ const Slider = ({ car }) => {
                     {car.map((item, index) => (
                         <Link key={index} className="">
                             <img className='w-96 h-72 p-1' src={item?.photo} alt={item?.title} />
-                            <h2 className='w-96 h-8 px-2 text-center font-semibold text-xl text-purple-900'>{item?.name}</h2>
+                            <h2 className='w-96 h-8 px-2 text-center font-semibold text-xl text-purple-700'>{item?.name}</h2>
                         </Link>
                     ))}
                 </Marquee>
             </div>
-            <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-2xl text-purple-900'>Latest Cars of {car[0]?.brand}</h2>
+            <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-2xl text-purple-700'>Latest Cars of {car[0]?.brand}</h2>
         </div>
     );
 };

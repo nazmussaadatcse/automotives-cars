@@ -124,8 +124,8 @@ const ProductDetail = () => {
                             </div>
 
                             <p>Ratings: {car.ratings}</p>
-                            <p className="text-purple-900 font-semibold">Price: $ {car.price}</p>
-                            <button onClick={() => addToCart(car._id, user.email)} className=" btn btn-xs my-2 btn-outline w-24 rounded-md">
+                            <p className="text-purple-700 font-semibold">Price: $ {car.price}</p>
+                            <button onClick={() => addToCart(car._id, user.email)} className=" btn btn-xs bg-white my-2 btn-outline w-24 rounded-md">
                                 Add to Cart
                             </button>
                             <p className="font-semibold">Descriptions:</p>

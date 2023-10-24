@@ -1,0 +1,10 @@
+.dark {
+    background-color: #000000; /* Dark background color */
+    color: #000000; /* Dark text color (black) */
+}
+
+.dark .navbar {
+    background-color: #111; /* Dark navbar background color */
+}
+
+/* Add more dark mode styles as needed */

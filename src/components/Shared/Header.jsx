@@ -3,8 +3,8 @@ import { Link, NavLink } from "react-router-dom";
 import { BiUserCircle } from 'react-icons/bi';
 import { AuthContext } from "../AuthProvider";
 import { FaCartPlus } from "react-icons/fa";
-
-
+import './dark-mode.css';
+import DarkModeToggleButton from "../DarkMode/DarkMode";
 const Header = () => {
     // const [user, setuser] = useState(null);
     const { user, logOut } = useContext(AuthContext);
@@ -26,7 +26,7 @@ const Header = () => {
     return (
 
 
-        <div className="navbar mb-8 py-4 shadow-md bg-orange-500">
+        <div className={`navbar gap-1 mb-8 py-4 shadow-md bg-orange-500`}>
             <img className="lg:flex justify-center items-center w-28 md:w-40 " src="https://i.ibb.co/m84FVRj/automotives-logo.png" alt="" />
             <div className="navbar-start">
                 <div className="dropdown">
@@ -67,7 +67,8 @@ const Header = () => {
 
                 }
             </div>
-            <img src="" alt="" />
+            <img src="" alt="" />  
+            <DarkModeToggleButton></DarkModeToggleButton>          
         </div>
     );
 };

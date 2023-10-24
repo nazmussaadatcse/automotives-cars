@@ -35,7 +35,7 @@ const Home = () => {
 
         <div>
             <HomeSlider></HomeSlider>
-            <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-xl text-purple-900'>
+            <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-xl text-purple-700'>
                 Top Brands
             </h2>
             <div className="mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-2 justify-center p-4">
@@ -45,7 +45,7 @@ const Home = () => {
                             <figure className="w-72 h-56 flex justify-center">
                                 <img className="" src={brand.brand_Img} alt="Shoes" />
                             </figure>
-                            <div className="flex flex-col justify-center items-center my-4">
+                            <div className="flex flex-col text-black justify-center items-center my-4">
                                 <Link to={`/product/${brand.brand_name}`}>
                                     <button className="card-title uppercase">{brand.brand_name}</button>
                                 </Link>
@@ -54,21 +54,21 @@ const Home = () => {
                     </div>
                 ))}
             </div>
-            <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-xl text-purple-900'>
+            <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-xl text-purple-700'>
                 Latest Cars of Automotives Brand
             </h2>
-            <div className="flex justify-center items-center text-center gap-2 p-2">
+            <div className="flex justify-center items-center text-center gap- p-2">
                 <Marquee pauseOnHover={true} speed={100}>
                     {car.map((item, index) => (
                         <Link key={index} className="">
                             <img className='w-60 h-40 px-1' src={item.photo} alt={item.title} />
-                            <h2 className='w-60 h-8 px-1 font-semibold text-md text-purple-900'>{item.name}</h2>
+                            <h2 className='w-60 h-8 px-1 shadow-md bg-white font-semibold text-md text-purple-700'>{item.name}</h2>
                         </Link>
                     ))}
                 </Marquee>
             </div>
             <div className="flex justify-center mt-8">
-                <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-xl text-purple-900'>
+                <h2 className='uppercase flex justify-center p-4 my-4 font-bold text-xl text-purple-700'>
                     Frequently Asked Question
 
                 </h2>
@@ -118,8 +118,8 @@ const Home = () => {
                     </div>
                 </div>
                 {/* First Column: Subscription Form */}
-                <div className="bg-base-200 m-4 p-6 rounded-lg flex-1">
-                    <img className="" src="" alt="" />
+                <div className="m-4 p-6 rounded-lg flex-1">
+                    <img className="mt" src="https://i.ibb.co/L5MYXqM/faq-removebg-preview.png" alt="" />
                 </div>
 
 
@@ -165,14 +165,14 @@ const Home = () => {
                             />
                         </div>
                         <div className="form-control mt-4">
-                            <button type="submit" className="btn btn-outline rounded-md">Send</button>
+                            <button type="submit" className="btn bg-white btn-outline rounded-md">Send</button>
                         </div>
                     </form>
                 </div>
             </div>
                 {/* */}
-                <div className="bg-base-200 m-4 p-6 rounded-lg flex-1">
-                    <img src="" alt="" />
+                <div className="m-4 p-6 rounded-lg flex-1">
+                    <img className="mt-12" src="https://i.ibb.co/m84FVRj/automotives-logo.png" alt="" />
                 </div>
 
             </div>

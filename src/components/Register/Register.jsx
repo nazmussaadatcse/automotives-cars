@@ -77,8 +77,9 @@ const Register = () => {
             <div className="hero-content p-12 flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Register now!</h1>
-                    <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.
+                    <p className="py-6 text-xl">
+                        Automotive Brand Cars is a full-stack web application designed to provide users with access to a wide range of car products, as well as the ability to manage and customize their car selections. The project have various technologies, including React, React Router, Firebase Authentication, MongoDB database and express back-end, to ensure a good user experience.
+
                     </p>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
