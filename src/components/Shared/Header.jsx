@@ -27,7 +27,7 @@ const Header = () => {
 
 
         <div className="navbar mb-8 py-4 shadow-md bg-orange-500">
-            <img className="lg:flex justify-center items-center w-28 md:w-40 " src="https://i.ibb.co/jLMfjbx/Ivory-Black-Luxury-Minimalist-Personal-Name-Logo-removebg-preview.png" alt="" />
+            <img className="lg:flex justify-center items-center w-28 md:w-40 " src="https://i.ibb.co/m84FVRj/automotives-logo.png" alt="" />
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

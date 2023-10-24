@@ -129,7 +129,7 @@ const Home = () => {
                 <div className=" md:w-1/2 my-4 md rounded-lg flex justify-center">
                 <div className="">
                     <h2 className="text-xl font-semibold">Contact us</h2>
-                    <p className="text-gray-500 mt-2">Feel free to contact us to suit your specific needs or add any additional information you'd like to include.
+                    <p className="text-gray-500 mt-2">Feel free to contact us to suit your specific needs or add any additional information you like to include.
 
 
 

@@ -8,12 +8,14 @@ import Cart from "./Cart/Cart";
 import UpdateProduct from "./UpdateProduct/UpdateProduct";
 import Login from "./Login/Login";
 import Register from "./Register/Register";
+import PrivateRoute from "./PrivateRoute";
+import Page404 from "./Page404";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
-        // errorElement:<ErrorPage></ErrorPage>,
+        errorElement:<Page404></Page404>,
         children: [
             {
                 path: '/',
@@ -29,7 +31,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/addproduct',
-                element: <AddProduct></AddProduct>,
+                element: <PrivateRoute>
+                    <AddProduct></AddProduct>
+                </PrivateRoute>,
             },
             {
                 path: '/product/:brand',
@@ -38,17 +42,23 @@ const router = createBrowserRouter([
             },
             {
                 path: '/car/:id',
-                element: <UpdateProduct></UpdateProduct>,
+                element: <PrivateRoute>
+                    <UpdateProduct></UpdateProduct>
+                </PrivateRoute>,
                 loader:()=> fetch(`http://localhost:5000/car`)
             },
             {
                 path: '/details/:id',
-                element: <ProductDetail></ProductDetail>,
+                element: <PrivateRoute>
+                    <ProductDetail></ProductDetail>
+                </PrivateRoute>,
                 loader:()=> fetch(`http://localhost:5000/car`)
             },
             {
                 path: '/cart',
-                element: <Cart></Cart>,
+                element: <PrivateRoute>
+                    <Cart></Cart>
+                </PrivateRoute>,
                 loader:()=> fetch(`http://localhost:5000/cart`)
             },
 
