@@ -51,10 +51,11 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-50">
             <div className="hero-content p-12 w-full flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Please Login</h1>
+                <div className="text-center  p-8 lg:text-left">
+                    <img src="https://i.ibb.co/m84FVRj/automotives-logo.png" alt="" />
+                    <h1 className="text-3xl font-bold">Please Login</h1>
                     <p className="py-6 text-xl">
                         Automotive Brand Cars is a full-stack web application designed to provide users with access to a wide range of car products, as well as the ability to manage and customize their car selections. The project have various technologies, including React, React Router, Firebase Authentication, MongoDB database and express back-end, to ensure a good user experience.
 
@@ -66,13 +67,13 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
+                            <input type="email" name="email" placeholder="Email" className="input input-bordered rounded-md" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
+                            <input type="password" name="password" placeholder="Password" className="input input-bordered rounded-md" required />
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">
                                     Forgot password?
@@ -83,10 +84,10 @@ const Login = () => {
                             <p className="text-red-500">{loginError}</p>
                         )}
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary rounded-md">Login</button>
+                            <button className="btn btn-outline rounded-md">Login</button>
                         </div>
                     </form>
-                    <p className="text-center mb-4">Do not have an account? <Link className="font-semibold text-green-700 " to={"/register"}>Register</Link></p>
+                    <p className="text-center text-black mb-4">Do not have an account? <Link className="font-semibold text-purple-700 " to={"/register"}>Register</Link></p>
                     <SocialLogin></SocialLogin>
                 </div>
             </div>

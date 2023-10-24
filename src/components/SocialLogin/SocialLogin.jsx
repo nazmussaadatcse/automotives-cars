@@ -34,7 +34,7 @@ const SocialLogin = () => {
     return (
         <div>
             <div className="flex justify-center">
-                <div className=" text-center shadow-md rounded-md p-2">
+                <div className=" text-center shadow-lg rounded-md p-2 m-2">
                 <p className="font-semibold text-red-900">Login with Google</p>
             <button onClick={handleGoogleLogIn} className="rounded-full text-2xl shadow-md text-red-700 hover:bg-purple-950 hover:rounded-full p-2"><FaGoogle></FaGoogle></button>
                 </div>
