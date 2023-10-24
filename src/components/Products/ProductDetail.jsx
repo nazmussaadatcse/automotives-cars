@@ -22,7 +22,7 @@ const ProductDetail = () => {
 
     useEffect(() => {
         // Load cart data 
-        fetch('http://localhost:5000/cart')
+        fetch('https://automotives-cars-server.vercel.app/cart')
             .then((res) => res.json())
             .then((data) => {
                 setCarts(data);
@@ -66,7 +66,7 @@ const ProductDetail = () => {
             setCarts(updatedCarts);
 
 
-            fetch('http://localhost:5000/cart', {
+            fetch('https://automotives-cars-server.vercel.app/cart', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

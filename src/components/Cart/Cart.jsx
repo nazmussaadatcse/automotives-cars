@@ -38,7 +38,7 @@ const Cart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/cart/${id}?email=${email}`, {
+                fetch(`https://automotives-cars-server.vercel.app/cart/${id}?email=${email}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

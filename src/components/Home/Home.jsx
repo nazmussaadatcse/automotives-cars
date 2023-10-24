@@ -21,7 +21,7 @@ const Home = () => {
     
 
     useEffect(() => {
-        fetch('http://localhost:5000/car')
+        fetch('https://automotives-cars-server.vercel.app/car')
             .then((response) => response.json())
             .then((data) => {
                 setCar(data); // Update the car state with the fetched data

@@ -38,28 +38,28 @@ const router = createBrowserRouter([
             {
                 path: '/product/:brand',
                 element: <Products></Products>,
-                loader:()=> fetch('http://localhost:5000/car')
+                loader:()=> fetch('https://automotives-cars-server.vercel.app/car')
             },
             {
                 path: '/car/:id',
                 element: <PrivateRoute>
                     <UpdateProduct></UpdateProduct>
                 </PrivateRoute>,
-                loader:()=> fetch(`http://localhost:5000/car`)
+                loader:()=> fetch(`https://automotives-cars-server.vercel.app/car`)
             },
             {
                 path: '/details/:id',
                 element: <PrivateRoute>
                     <ProductDetail></ProductDetail>
                 </PrivateRoute>,
-                loader:()=> fetch(`http://localhost:5000/car`)
+                loader:()=> fetch(`https://automotives-cars-server.vercel.app/car`)
             },
             {
                 path: '/cart',
                 element: <PrivateRoute>
                     <Cart></Cart>
                 </PrivateRoute>,
-                loader:()=> fetch(`http://localhost:5000/cart`)
+                loader:()=> fetch(`https://automotives-cars-server.vercel.app/cart`)
             },
 
         ]

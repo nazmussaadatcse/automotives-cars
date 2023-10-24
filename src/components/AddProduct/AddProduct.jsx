@@ -21,7 +21,7 @@ const AddProduct = () => {
         }
         console.log(newCar);
 
-        fetch('http://localhost:5000/car', {
+        fetch('https://automotives-cars-server.vercel.app/car', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
