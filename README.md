@@ -89,4 +89,3 @@ Explore the Automotive Brand Cars application to discover a diverse selection of
 ## Acknowledgments
 
 - This project uses Firebase Authentication for user management.
-- Material UI and Tailwind CSS for frontend design.
