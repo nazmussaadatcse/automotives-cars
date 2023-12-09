@@ -1,6 +1,6 @@
 # Automotive Brand Cars
 
-[Explore Automotive Brand Cars](https://auto-motives-cars.web.app)
+[Visit Automotive Brand Cars](https://auto-motives-cars.web.app)
 
 [Backend](https://github.com/nazmussaadatcse/automotives-cars-server)
 
